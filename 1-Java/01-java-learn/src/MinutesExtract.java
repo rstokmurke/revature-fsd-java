@@ -4,6 +4,7 @@ public class MinutesExtract {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		
 		System.out.println("Enter time in HH:MM:SS format");
 		String name = scanner.nextLine();
 		
