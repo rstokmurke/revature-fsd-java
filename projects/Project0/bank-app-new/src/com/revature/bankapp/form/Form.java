@@ -11,9 +11,9 @@ public abstract class Form {
 	success = false;
 }
 	private void displayTitle() {
-		System.out.println("\n====");
-		System.out.println(name);
-		System.out.println("====\n");
+		System.out.println(" ");
+		System.out.println("*** "+name+" ***");
+		System.out.println(" ");
 	}
 	public void captureDataAndPerformAction() {
 		while (!success) {

@@ -1,7 +1,6 @@
 package com.revature.bankapp.form;
 
 import java.util.Scanner;
-
 import com.revature.bankapp.model.Customer;
 import com.revature.bankapp.model.DataManager;
 
@@ -30,8 +29,9 @@ public class LoginForm extends Form {
 			success = true;
 			System.out.println("Login Succesfull.");
 			System.out.println("Welcome "+ customer.getFirstname());
+			
 		}else {
-			System.out.println("Invalid Login");
+			System.out.println("Invalid username/password");
 		}
 			
 		}

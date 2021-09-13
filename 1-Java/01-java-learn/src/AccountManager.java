@@ -1,7 +1,12 @@
+import java.util.Scanner;
 
 public class AccountManager {
 
 	public static void main(String[] args) {
+		//Scanner scanner = new Scanner(System.in);
+		//System.out.println("Enter acc no.");
+		//String acc = scanner.nextLine();
+		
 		String accountNumber = "01302343794";
 		double balance = 5000.0;
 		

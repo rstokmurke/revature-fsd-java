@@ -28,9 +28,9 @@ public class MainMenu extends Menu {
 		Scanner scanner = new Scanner(System.in);
 		switch (selection) {
 			case 1:
-				System.out.println("\n*****");
-				System.out.println("Register New Customer\n");
-				System.out.println("*****\n");
+				System.out.println(" ");
+				System.out.println("--- Register New Customer ---");
+				System.out.println(" ");
 				//Scanner scanner = new Scanner(System.in);
 				System.out.println("First name:");
 				String firstName = scanner.nextLine();
@@ -52,6 +52,10 @@ public class MainMenu extends Menu {
 			case 2:
 				LoginForm loginform = new LoginForm("Login Form");
 				loginform.captureDataAndPerformAction();
+				
+				CustomerMenuAfterLogin cust = new CustomerMenuAfterLogin ("Account Holder Menu");
+				cust.displayMenuAndCaptureSelection();
+		
 				break;
 			case 3:
 				break;
