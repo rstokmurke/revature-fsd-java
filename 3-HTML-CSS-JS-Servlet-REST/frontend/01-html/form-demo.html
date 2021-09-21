@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Demo</title>
+    </head>
+    <body>
+        <h1>Form Demo</h1>
+        <form action="https://w3schools.com/action_page.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter name" value="John" name="name"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Min 8 characters" required value="12345" name="password"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="rst@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.9.-]+\.[a-z]{2,}$" title="Enter valid email">
+            <br><br>
+            <select name="color">
+                <option>Red</option>
+                <option>Green</option>
+                <option selected>Blue</option>
+            </select><br><br>
+
+            <label>Gender</label><br>
+            <input type="radio" name = "gender" value="m" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="f" id="female" checked>
+            <label for="female">Female</label><br><br>
+
+            <select multiple name="Languages-m">
+                <option>English</option>
+                <option>Arabic</option>
+                <option>Spanish</option>
+                <option>French</option>
+
+            </select><br><br>
+
+            <input type="checkbox" id="english" name="languages" value="en"> <label for="english">English</label><br>
+            <input type="checkbox" id="arabic" name="languages" value="ar" checked > <label for="arabic">Arabic</label><br>
+            <input type="checkbox" id="spanish" name="languages" value="sp"> <label for="spanish">Spanish</label><br>
+            <input type="checkbox" id="french" name="languages" value="fr"> <label for="french">French</label><br>
+
+            <textarea name="textarea">Line1
+                Line2
+            </textarea>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
