@@ -63,15 +63,46 @@ public class TransactionDaoImpl implements TransactionDao {
 	}
 
 	@Override
-	public void addTransaction(long accountId, String type, long money) throws SQLException {
-		// TODO Auto-generated method stub
+	public void addTransaction(int accountId, String type, double amount) throws SQLException {
+		try(Connection connection = Util.getConnection()){
+			
+			String sql = "INSERT INTO transaction (type, ammount, account_id) VALUES (?, ?, ?)";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, type);
+			preparedStatement.setInt(2, (int) amount);
+			preparedStatement.setInt(3, (int) accountId);
+			
+			preparedStatement.executeUpdate();
+			connection.close();
+			
+		}
 		
 	}
 
 	@Override
-	public List<Transaction> showTransactions(long accountId) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Transaction> showTransactions(int accountId) throws SQLException {
+		List<Transaction> transactionList = new ArrayList<>();
+		
+		
+		try(Connection connection = Util.getConnection()){
+			
+			String sql = "select id, type, ammount from transaction where account_id = ?";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, (int) accountId);
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				Transaction transaction = new Transaction();
+				transaction.setId(rs.getInt("id"));
+				transaction.setType(rs.getString("type"));
+				transaction.setAmount(rs.getDouble("ammount"));
+				
+				transactionList.add(transaction);
+			}
+		}
+		
+		return transactionList;
 	}
-
 }

@@ -6,21 +6,22 @@ import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
 
+import com.revature.bankapp.model.Account;
+import com.revature.bankapp.model.Employee;
 import com.revature.bankapp.model.Transaction;
 
 class TransactionDaoImplTest {
 
 	@Test
 	void test() {
-		TransactionDaoImpl dao = new TransactionDaoImpl();
-		Transaction transaction = new Transaction();
+		TransactionDaoImpl accountdao = new TransactionDaoImpl();
 		try {
-			dao.performDeposit(22, 11);
+			accountdao.addTransaction(1, "deposit", 450);
+			accountdao.showTransactions(0);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	//	fail("Not yet implemented");
+	}
 	}
 
-}
+

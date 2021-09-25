@@ -1,5 +1,8 @@
 package com.revature.bankapp.dao.impl;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
@@ -10,13 +13,12 @@ import com.revature.bankapp.model.Customer;
 class AccountDaoImplTest {
 
 	@Test
-	void test() {
+	void testList_success() {
 		AccountDaoImpl accountdao = new AccountDaoImpl();
-		Account account = new Account(null, 0);
 		try {
-			accountdao.create(account);
+			assertTrue(accountdao.list().size() >= 0);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			fail("Getting employee list failed");
 		}
 	}
 

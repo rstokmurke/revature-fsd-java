@@ -8,7 +8,9 @@ import com.revature.bankapp.dao.impl.CustomerDaoImpl;
 import com.revature.bankapp.dao.impl.EmployeeDaoImpl;
 import com.revature.bankapp.form.LoginForm;
 import com.revature.bankapp.model.Account;
+import com.revature.bankapp.model.AccountManager;
 import com.revature.bankapp.model.Customer;
+import com.revature.bankapp.model.EmployeeOperation;
 
 public class EmployeeMenu extends Menu {
 	public EmployeeMenu (String name) {
@@ -76,7 +78,13 @@ public class EmployeeMenu extends Menu {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			EmployeeOperation accountManager = new EmployeeOperation();
+			try {
+				accountManager.EmployeeOperation();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		case 3:
 			System.out.println("Log out successfully");

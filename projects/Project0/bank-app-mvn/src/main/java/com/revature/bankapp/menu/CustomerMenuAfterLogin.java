@@ -15,7 +15,7 @@ public class CustomerMenuAfterLogin extends Menu {
 		super(name);
 		addMenuItem("Apply for new account");
 		addMenuItem("Perform Transaction");
-		addMenuItem("View Details");
+		addMenuItem("View Account Details");
 		addMenuItem("Log Out");
 	}
 
@@ -81,7 +81,8 @@ public class CustomerMenuAfterLogin extends Menu {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			CustomerMenuAfterLogin custMenu1 = new CustomerMenuAfterLogin ("Account Holder Menu");
+			custMenu1.displayMenuAndCaptureSelection();
 			break;
 		case 4:
 			System.out.println("Log out successfully");

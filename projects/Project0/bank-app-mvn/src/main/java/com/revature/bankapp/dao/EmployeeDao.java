@@ -9,4 +9,8 @@ import com.revature.bankapp.model.Employee;
 public interface EmployeeDao {
 	
 	List<Employee> list() throws SQLException;
+
+	void approveAccount(int customerid) throws SQLException;
+
+	void rejectAccount(int customerid) throws SQLException;
 }

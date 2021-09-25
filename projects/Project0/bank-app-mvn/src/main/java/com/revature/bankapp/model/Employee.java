@@ -9,41 +9,20 @@ public class Employee {
 		private String accountNo;
 		private double balance;
 		private char status;
+		private int customerid;
 		
-		public Employee(String firstname, String lastname, String accountNo, double balance, char status) {
+		public Employee(String firstname, String lastname, String accountNo, double balance, char status, int customerid) {
 			super();
 			this.firstname = firstname;
 			this.lastname = lastname;
 			this.accountNo = accountNo;
 			this.balance = balance;
 			this.status = status;
+			this.customerid = customerid;
 			
 			
 			//this.email = email;
 			//this.password = password;
-		}
-		public String getAccountNo() {
-			return accountNo;
-		}
-
-		public char getStatus() {
-			return status;
-		}
-
-		public void setStatus(char status) {
-			this.status = status;
-		}
-
-		public void setAccountNo(String accountNo) {
-			this.accountNo = accountNo;
-		}
-
-		public double getBalance() {
-			return balance;
-		}
-
-		public void setBalance(double balance) {
-			this.balance = balance;
 		}
 
 		public String getFirstname() {
@@ -61,23 +40,57 @@ public class Employee {
 		public void setLastname(String lastname) {
 			this.lastname = lastname;
 		}
-		
+
+		public long getId() {
+			return id;
+		}
 
 		public void setId(long id) {
 			this.id = id;
 		}
 
-		public long getId() {
-			return id;
+		public String getAccountNo() {
+			return accountNo;
 		}
-		
+
+		public void setAccountNo(String accountNo) {
+			this.accountNo = accountNo;
+		}
+
+		public double getBalance() {
+			return balance;
+		}
+
+		public void setBalance(double balance) {
+			this.balance = balance;
+		}
+
+		public char getStatus() {
+			return status;
+		}
+
+		public void setStatus(char status) {
+			this.status = status;
+		}
+
+		public int getCustomerid() {
+			return customerid;
+		}
+
+		public void setCustomerid(int customerid) {
+			this.customerid = customerid;
+		}
+
 		@Override
 		public String toString() {
-			return "Account Details [First Name=" + firstname+ ",Last Name=" + lastname+ ",AccountNo=" + accountNo + ", Balance=" + balance +",Status=" + status + "]";
+			return "Account details: [firstname= " + firstname + ", lastname= " + lastname + ", accountNo= "
+					+ accountNo + ", balance= " + balance + ", status= " + status + ", customerid= " + customerid + "]";
 		}
+
 		public void setStatus(Reader characterStream) {
 			// TODO Auto-generated method stub
 			
 		}
+		
 	}
 

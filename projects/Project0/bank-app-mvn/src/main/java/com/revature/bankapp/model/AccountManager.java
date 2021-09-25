@@ -16,6 +16,8 @@ public class AccountManager {
 		
 		System.out.println("1] Deposit:");
 		System.out.println("2] Withdrawal:");
+		System.out.println("3] Transaction details:");
+		System.out.println("4] Money Transfer:");
 		System.out.println("Choose Action:");
 		int action = scanner.nextInt();
 		
@@ -37,6 +39,17 @@ public class AccountManager {
 			
 			CustomerMenuAfterLogin custMenu1 = new CustomerMenuAfterLogin ("Account Holder Menu");
 			custMenu1.displayMenuAndCaptureSelection();
+			break;
+			
+		case 3:
+			DatabaseManager dbm = new DatabaseManager();
+			dbm.showTransactionsList();
+			CustomerMenuAfterLogin custMenu2 = new CustomerMenuAfterLogin ("Account Holder Menu");
+			custMenu2.displayMenuAndCaptureSelection();
+			break;
+		case 4:
+			DatabaseManager db2 = new DatabaseManager();
+			db2.transfer();
 			break;
 			
 		}
