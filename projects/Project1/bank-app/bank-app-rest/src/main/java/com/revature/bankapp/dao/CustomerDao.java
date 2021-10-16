@@ -8,7 +8,7 @@ import com.revature.bankapp.model.Customer;;
 
 public interface CustomerDao {
 	List<Customer> list() throws SQLException;
-	Customer getCustomerByEmail(String email) throws SQLException;
+	Customer getCustomerByEmail(String email) throws AppException;
 	void create(Customer customer) throws AppException;
 	void update(Customer employee) throws SQLException;
 	void delete(int id) throws SQLException;

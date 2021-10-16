@@ -5,6 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Banking App REST API</name>
+  <build>
+		<finalName>bank-app-rest</finalName>
+	</build>
+  
   <properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>

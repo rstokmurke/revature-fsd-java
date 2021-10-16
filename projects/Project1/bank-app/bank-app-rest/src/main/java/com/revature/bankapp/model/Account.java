@@ -9,11 +9,13 @@ public class Account {
 	private double balance;
 	private int customerid;
 	
+	public Account() {}
+	
 	public Account(String accountNo, double balance) {
 		super();
 		this.accountNo = accountNo;
 		this.balance = balance;
-		this.customerid = customerid;
+//		this.customerid = customerid;
 		
 		//this.email = email;
 		//this.password = password;

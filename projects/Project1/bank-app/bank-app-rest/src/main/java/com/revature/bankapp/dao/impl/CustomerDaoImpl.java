@@ -27,7 +27,8 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	@Override
-	public Customer getCustomerByEmail(String email) throws SQLException {
+	public Customer getCustomerByEmail(String email) throws AppException {
+		LOGGER.info("Start");
 		Customer customer = null;
 			try (Connection connection = Util.getConnection()) {
 				String sql = "SELECT * FROM bankapp.customer where email= ?";
@@ -35,15 +36,20 @@ public class CustomerDaoImpl implements CustomerDao {
 				preparedStatement.setString(1, email);
 				ResultSet resultSet = preparedStatement.executeQuery();
 				while (resultSet.next()) {
-					currentCustomerId = resultSet.getInt("id");
+					long id = resultSet.getInt("id");
 					String fn = resultSet.getString("firstname");
 					String ln = resultSet.getString("lastname");
 					String em = resultSet.getString("email");
 					String psw = resultSet.getString("password");
 
 					customer = new Customer(fn, ln, em, psw);
+					customer.setId(id);
 					
-				}
+				}LOGGER.info("End");
+			}
+			catch(SQLException e) {
+				LOGGER.info("Error inserting customer, e");
+				throw new AppException(e);
 			}
 			return customer;
 	}
