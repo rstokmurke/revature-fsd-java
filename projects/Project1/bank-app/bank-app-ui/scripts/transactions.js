@@ -4,7 +4,7 @@ let tabled = document.getElementById("transactionTable");
 console.log(currentAccountId);
 
 let accountNumberDisplay = document.getElementById("accountNumberDisplay");
- accountNumberDisplay.innerText = "Transactions of Account Number : " + currentAccountId;
+ accountNumberDisplay.innerText = "Account Number : " + currentAccountId;
 
 
  async function showTransactions(){

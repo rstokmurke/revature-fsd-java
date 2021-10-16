@@ -2,6 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const currentAccountId = urlParams.get('id');
 console.log(currentAccountId);
 
+let setAccountNumber = document.getElementById("setAccountNumber")
 let amountEntered = document.getElementById("amount");
 let depositBtn = document.getElementById("depositButton")
 
@@ -11,6 +12,8 @@ let errorMessage = document.getElementById("error");
 
 successMessage.style.display = "none";
 errorMessage.style.display = "none";
+setAccountNumber.innerText = "Account Number : " + currentAccountId;
+
 
 depositBtn.addEventListener("click", function () {
     amountEnteredValid = true;
