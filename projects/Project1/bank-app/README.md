@@ -30,7 +30,7 @@ To-do list:
 
 ## Getting Started
 1. Start with this Github Repository
-2. Git clone to directory of your choice $ git clone https://github.com/rstokmurke/revature-fsd-java/new/master/projects/Project1/bank-app
+2. Git clone to directory of your choice $ git clone https://github.com/rstokmurke/revature-fsd-java/new/master/projects/Project1
 3. Run the project on server 
 
 
